@@ -1,17 +1,15 @@
 - name: install nginx
-  apt: 
+  yum: 
     name:
       - nginx
     state: present
     update_cache: yes
     cache_valid_time: 3600
-  become: yes
 
 - name: start nginx
   service:
     name: nginx
     state: started
-  become: yes
 
 - name: index
   template:
