@@ -1,11 +1,10 @@
 node{
     stage('Clone') {
-        git 'https://github.com/ludovic-tech/ansible-jenkins.git'
+        git 'https://github.com/MWalid745/ansible-jenkins.git'
     }
     stage('Ansible') {
       ansiblePlaybook (
-          colorized: true, 
-          become: true,             
+          colorized: true,            
           playbook: 'playbook.yml',
           inventory: 'hosts.yml'
       )
